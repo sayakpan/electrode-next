@@ -153,7 +153,7 @@ export function AuthModal({ isOpen, onClose, defaultTab = "login" }) {
                                         type="button"
                                         variant="ghost"
                                         size="icon"
-                                        className="absolute right-2 top-1/2 transform -translate-y-1/2 hover:bg-white/10"
+                                        className="absolute right-2 top-1/2 transform -translate-y-1/2 hover:bg-white/10 hover:text-white"
                                         onClick={() => setShowLoginPassword(!showLoginPassword)}
                                     >
                                         {showLoginPassword ? (
@@ -222,7 +222,7 @@ export function AuthModal({ isOpen, onClose, defaultTab = "login" }) {
                                         type="button"
                                         variant="ghost"
                                         size="icon"
-                                        className="absolute right-2 top-1/2 transform -translate-y-1/2 hover:bg-white/10"
+                                        className="absolute right-2 top-1/2 transform -translate-y-1/2 hover:bg-white/10 hover:text-white"
                                         onClick={() => setShowRegisterPassword(!showRegisterPassword)}
                                     >
                                         {showRegisterPassword ? (
@@ -250,7 +250,7 @@ export function AuthModal({ isOpen, onClose, defaultTab = "login" }) {
                                         type="button"
                                         variant="ghost"
                                         size="icon"
-                                        className="absolute right-2 top-1/2 transform -translate-y-1/2 hover:bg-white/10"
+                                        className="absolute right-2 top-1/2 transform -translate-y-1/2 hover:bg-white/10 hover:text-white"
                                         onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                                     >
                                         {showConfirmPassword ? (

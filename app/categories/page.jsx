@@ -88,7 +88,7 @@ export default function CategoriesPage() {
                                         </span>
                                         <Button 
                                             variant="ghost" 
-                                            className="text-white hover:bg-white/10"
+                                            className="text-white hover:text-white hover:bg-white/10"
                                         >
                                             View Games
                                         </Button>
