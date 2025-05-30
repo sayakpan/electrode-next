@@ -40,7 +40,7 @@ export function Navbar() {
                             <Link href="/" className="flex items-center space-x-2">
                                 <div className="w-10 h-10 rounded-lg flex items-center justify-center">
                                     <Image 
-                                        src="/images/electrode-logo.png"
+                                        src="/images/logo.png"
                                         alt="Electrode Games Logo"
                                         width={32}
                                         height={32}
