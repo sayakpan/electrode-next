@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Search, Filter, Star, Users, Clock } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
+import { useRouter } from 'next/navigation'
 import {
     Select,
     SelectContent,
@@ -13,6 +14,16 @@ import {
 } from "@/components/ui/select"
 
 const games = [
+    {
+        id: 0,
+        title: "Tic Tac Toe",
+        image: "/images/tic-tac-toe.png",
+        category: "Puzzle",
+        rating: 4.9,
+        players: 5000,
+        playTime: "5-10 min",
+        slug: "tic-tac-toe"
+    },
     {
         id: 1,
         title: "Cyber Racer",
@@ -72,12 +83,17 @@ const games = [
 export default function GamesPage() {
     const [searchQuery, setSearchQuery] = useState('')
     const [selectedCategory, setSelectedCategory] = useState('all')
+    const router = useRouter()
 
     const filteredGames = games.filter(game => {
         const matchesSearch = game.title.toLowerCase().includes(searchQuery.toLowerCase())
         const matchesCategory = selectedCategory === 'all' || game.category === selectedCategory
         return matchesSearch && matchesCategory
     })
+
+    const handlePlayGame = (slug) => {
+        router.push(`/games/${slug}`)
+    }
 
     return (
         <div className="min-h-screen bg-black text-white py-8">
@@ -126,7 +142,7 @@ export default function GamesPage() {
                                 key={game.id}
                                 className="group relative overflow-hidden rounded-lg bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-300"
                             >
-                                <div className="aspect-video relative">
+                                <div className="aspect-video relative overflow-hidden">
                                     <img
                                         src={game.image}
                                         alt={game.title}
@@ -153,7 +169,10 @@ export default function GamesPage() {
                                             <span>{game.playTime}</span>
                                         </div>
                                     </div>
-                                    <Button className="w-full mt-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">
+                                    <Button 
+                                        className="w-full mt-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
+                                        onClick={() => handlePlayGame(game.slug)}
+                                    >
                                         Play Now
                                     </Button>
                                 </div>

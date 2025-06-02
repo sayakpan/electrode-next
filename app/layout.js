@@ -35,8 +35,6 @@ export const metadata = {
         images: ["https://electrodegames.site/logo.png"],
     },
 
-    metadataBase: new URL("https://electrodegames.site"),
-    themeColor: "#0f172a",
     robots: {
         index: true,
         follow: true,

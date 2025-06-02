@@ -50,6 +50,7 @@ export function AuthModal({ isOpen, onClose, defaultTab = "login" }) {
             cookies.set('profile', response.profile, { path: '/' })
 
             onClose()
+            window.location.reload()
         } catch (err) {
             setError(err.message)
         } finally {
